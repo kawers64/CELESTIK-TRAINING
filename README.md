@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -73,3 +74,7 @@ export default defineConfig([
 ])
 
 ```
+=======
+# CELESTIK-TRAINING
+A React and TypeScript web application that retrieves satellite TLE data and calculates the International Space Station's position using satellite.js. A learning project focused on satellite tracking, orbital calculations, and web development.
+>>>>>>> 234a447396c18020e42d9f57df36068c78f86f1d
