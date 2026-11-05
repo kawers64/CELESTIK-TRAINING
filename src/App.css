@@ -1,0 +1,117 @@
+.tracker {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  background: #101827;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 24px;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+}
+
+.tracker-header {
+  width: 100%;
+  max-width: 560px;
+  text-align: left;
+}
+
+.tracker-header h1 {
+  font-size: 30px;
+  margin: 0 0 12px;
+  color: white;
+}
+
+.tracker-header p {
+  color: #a9b8cf;
+  font-size: 15px;
+  margin: 0;
+}
+
+.position-card {
+  width: 100%;
+  max-width: 560px;
+  box-sizing: border-box;
+  padding: 24px;
+  background: #1b2a40;
+  border-radius: 12px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.card-header h2 {
+  color: #a9b8cf;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.iss-badge {
+  background: #34435a;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.coordinates {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.coordinate {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.coordinate span {
+  color: #a9b8cf;
+  font-size: 12px;
+}
+
+.coordinate strong {
+  font-size: 16px;
+  color: white;
+  overflow-wrap: anywhere;
+}
+
+.empty-state {
+  color: #a9b8cf;
+  font-size: 14px;
+}
+
+.calculate-button {
+  width: 100%;
+  max-width: 560px;
+  box-sizing: border-box;
+  padding: 14px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.calculate-button:hover {
+  background: #1d4ed8;
+}
+
+@media (max-width: 480px) {
+  .coordinates {
+    grid-template-columns: 1fr;
+  }
+}
