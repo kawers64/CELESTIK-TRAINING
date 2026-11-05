@@ -1,80 +1,161 @@
-<<<<<<< HEAD
-# React + TypeScript + Vite
+# 🛰️ CELESTIK-TRAINING — ISS Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple web application built with **React, TypeScript, and Vite** to retrieve orbital data and calculate the current position of the International Space Station (ISS).
 
-Currently, two official plugins are available:
+This project is a learning environment developed alongside **CELESTIK**, a satellite tracking web application.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🎯 Project Objectives
 
-## React Compiler
+The main objectives are to:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Learn React and TypeScript through practical development.
+- Understand the architecture of a modern web application.
+- Retrieve and process satellite orbital data (TLE).
+- Calculate satellite positions using orbital propagation.
+- Connect scientific calculations to an interactive web interface.
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Retrieve ISS Two-Line Element (TLE) data from CelesTrak.
+- Propagate the ISS orbit using the SGP4 model through `satellite.js`.
+- Convert satellite coordinates from ECI to geodetic coordinates.
+- Display latitude, longitude, and altitude.
+- Calculate the ISS position on demand using an interactive button.
+- Present orbital information in a responsive interface.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Technologies
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| Technology | Purpose |
+|---|---|
+| React | User interface |
+| TypeScript | Application logic and type safety |
+| Vite | Development server and build tool |
+| satellite.js | Orbital propagation and coordinate transformations |
+| CSS | Interface styling |
+| CelesTrak | Satellite TLE data source |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📁 Project Structure
 
+```text
+CELESTIK-TRAINING/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── App.tsx
+│   ├── App.css
+│   ├── index.css
+│   ├── main.tsx
+│   └── iss.ts
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.ts
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+### Main Files
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+**`src/iss.ts`**
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Handles the scientific calculations:
 
+1. Fetches ISS TLE data from CelesTrak.
+2. Parses the orbital elements.
+3. Initializes the SGP4 propagation model.
+4. Calculates the ISS position at the current time.
+5. Converts ECI coordinates into latitude, longitude, and altitude.
+
+**`src/App.tsx`**
+
+Manages the React interface, calls the orbital calculation function, stores the resulting position using `useState`, and displays the coordinates.
+
+**`src/App.css`**
+
+Defines the appearance and layout of the ISS Tracker interface.
+
+## ⚙️ Installation
+
+### Prerequisites
+
+- Node.js
+- npm
+- Git
+
+### Clone the repository
+
+```bash
+git clone https://github.com/kawers64/CELESTIK-TRAINING.git
+cd CELESTIK-TRAINING
 ```
-=======
-# CELESTIK-TRAINING
-A React and TypeScript web application that retrieves satellite TLE data and calculates the International Space Station's position using satellite.js. A learning project focused on satellite tracking, orbital calculations, and web development.
->>>>>>> 234a447396c18020e42d9f57df36068c78f86f1d
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Start the development server
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed in the terminal (usually `http://localhost:5173`).
+
+## 🌍 How It Works
+
+The application follows a simple processing pipeline:
+
+```text
+CelesTrak API
+     |
+     v
+ISS TLE Data
+     |
+     v
+satellite.js (SGP4)
+     |
+     v
+ECI Coordinates
+     |
+     v
+Geodetic Conversion
+     |
+     v
+Latitude / Longitude / Altitude
+     |
+     v
+React Interface
+```
+
+When the user clicks **Calculate Position**, the application retrieves orbital data, computes the ISS position, and updates the interface.
+
+## 📚 Learning Focus
+
+This repository is primarily an educational project designed to develop a deeper understanding of:
+
+- React components and state management.
+- TypeScript functions and asynchronous operations.
+- API requests and data processing.
+- Orbital mechanics and coordinate systems.
+- Frontend application architecture.
+
+## 🔭 Future Improvements
+
+Potential improvements include:
+
+- Displaying the ISS position on an interactive map.
+- Visualizing satellite trajectories.
+- Supporting multiple satellites.
+- Improving error handling and loading indicators.
+- Separating orbital calculations into reusable modules.
+
+## 👨‍💻 Author
+
+Developed by [kawers64](https://github.com/kawers64) as part of the CELESTIK learning and development process.
+
+## 📡 Data Source
+
+Orbital elements are retrieved from [CelesTrak](https://celestrak.org/).
+
+Satellite propagation and coordinate transformations are performed using [satellite.js](https://github.com/shashwatak/satellite-js).
